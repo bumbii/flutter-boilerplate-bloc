@@ -15,16 +15,19 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     AppLogger.instance.e(details.exceptionAsString());
   };
 
-  final Directory appDocDirectory = await getApplicationDocumentsDirectory();
+  late Directory appDocDirectory;
+  if (!kIsWeb) {
+    appDocDirectory = await getApplicationDocumentsDirectory();
+  }
   final storage = await HydratedStorage.build(
       storageDirectory: kIsWeb
           ? HydratedStorage.webStorageDirectory
           : Directory('${appDocDirectory.path}/bumbii'));
   await runZonedGuarded(
-    () async {
+        () async {
       await HydratedBlocOverrides.runZoned(() async => runApp(await builder()),
           blocObserver: AppBlocObserver(), storage: storage);
     },
-    (error, stackTrace) => AppLogger.instance.e(error.toString()),
+        (error, stackTrace) => AppLogger.instance.e(error.toString()),
   );
 }
