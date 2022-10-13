@@ -53,6 +53,7 @@ class _AppState extends State<App> {
                 },
                 routerDelegate: router.routerDelegate,
                 routeInformationParser: router.routeInformationParser,
+                routeInformationProvider: router.routeInformationProvider,
               );
             },
           ),
