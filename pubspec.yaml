@@ -3,7 +3,7 @@ description: Bumbii Books
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -32,32 +32,34 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  bloc: ^8.0.3
-  flutter_bloc: ^8.0.1
+  #STATE MAMNAGERMETS
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
   hydrated_bloc: ^8.1.0
-  equatable: ^2.0.3
+  provider: ^6.0.4
 
-  path_provider: ^2.0.10
+  equatable: ^2.0.5
 
-  provider: ^6.0.2
+  path_provider: ^2.0.11
 
   # Environment
   flutter_dotenv: ^5.0.2
-  flutter_svg: ^1.0.3
+  flutter_svg: ^1.1.5
 
   app_tracking_transparency: ^2.0.2+4
 
+  # LOGGER
   logger: ^1.1.0
 
   # Router
-  go_router: ^3.1.0
+  go_router: ^5.0.5
 
-  responsive_builder: ^0.4.2
+  responsive_builder: ^0.4.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: ^1.21.1
+  test: ^1.21.4
   mocktail: ^0.3.0
   integration_test:
     sdk: flutter
@@ -73,7 +75,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
